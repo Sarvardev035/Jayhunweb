@@ -1,0 +1,18 @@
+{
+  "brand": "Jayhun Choyxona",
+  "tagline": "Milliy taomlar, iliq suhbatlar",
+  "description": "Jayhun — oilaviy uchrashuvlar, mazali taomlar va chinakam mehmondo‘stlik maskani.",
+  "phone": "+998 20 009 70 71",
+  "address": "Toshkent shahri, Chilonzor tumani",
+  "hours": "Har kuni 10:00 — 23:00",
+  "categories": ["Barchasi", "Nonushta", "Milliy taomlar", "Kaboblar", "Ichimliklar"],
+  "dishes": [
+    {"id":"osh","name":"Jayhun oshi","description":"Ziravorli guruch, mayiz, sabzi va yumshoq qo‘y go‘shti.","price":45000,"category":"Milliy taomlar","image":"https://images.unsplash.com/photo-1627662168223-7df99068099a?auto=format&fit=crop&w=900&q=80","featured":true},
+    {"id":"qozonkabob","name":"Qozon kabob","description":"Kartoshka va piyoz bilan dimlangan shirali go‘sht.","price":65000,"category":"Kaboblar","image":"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80","featured":true},
+    {"id":"lagmon","name":"Uy lag‘moni","description":"Qo‘lda cho‘zilgan lag‘mon, sabzavot va maxsus qayla.","price":38000,"category":"Milliy taomlar","image":"https://images.unsplash.com/photo-1623341214825-9f4f963727da?auto=format&fit=crop&w=900&q=80","featured":false},
+    {"id":"choy","name":"Jayhun choyi","description":"Yangi yalpiz, limon va asal bilan xushbo‘y choy.","price":18000,"category":"Ichimliklar","image":"https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=900&q=80","featured":false}
+  ],
+  "hotSales": [
+    {"id":"family-set","name":"Oilaviy dasturxon","description":"4 kishilik osh, salat va choy jamlanmasi.","price":180000,"oldPrice":220000,"image":"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80","active":true}
+  ]
+}
