@@ -1,0 +1,700 @@
+<!DOCTYPE html><html class="dark" lang="uz"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Jayhun Choyxona — Milliy Taomlar</title><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0}body{overscroll-behavior:none}main>:first-child{margin-top:0!important}main>:last-child{margin-bottom:0!important}}::-webkit-scrollbar{display:none}.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}.no-scrollbar::-webkit-scrollbar{display:none}@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}.shimmer{background:linear-gradient(90deg,transparent 0%,rgba(245,158,11,.06) 50%,transparent 100%);background-size:200% 100%;animation:shimmer 3s infinite}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}.float-anim{animation:float 4s ease-in-out infinite}.page-section{display:none}.page-section.active{display:block}#admin-section{display:none}#admin-section.active{display:block}.sound-btn{transition:transform .1s,box-shadow .15s}.sound-btn:active{transform:scale(.95)!important}</style><script src="https://cdn.tailwindcss.com/3.4.16"></script><script>tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-tertiary-fixed":"#370e00","primary-fixed-dim":"#ffb95f","secondary-container":"#63a109","tertiary-container":"#ff956b","surface-container-high":"#262a33","error":"#ffb4ab","on-tertiary-container":"#7a2800","secondary":"#96d947","surface":"#0f131c","tertiary-fixed-dim":"#ffb599","on-primary-container":"#613b00","inverse-on-surface":"#2c3039","primary-fixed":"#ffddb8","on-surface-variant":"#d8c3ad","surface-dim":"#0f131c","tertiary-fixed":"#ffdbce","primary-container":"#f59e0b","surface-container-low":"#181c24","surface-tint":"#ffb95f","inverse-primary":"#855300","secondary-fixed":"#b1f661","on-tertiary":"#5a1c00","on-primary-fixed-variant":"#653e00","on-primary":"#472a00","on-secondary":"#1e3700","primary":"#ffc174","tertiary":"#ffbda5","outline-variant":"#534434","background":"#0f131c","surface-container-lowest":"#0a0e16","inverse-surface":"#dfe2ee","on-surface":"#dfe2ee","surface-bright":"#353942","on-error":"#690005","surface-container-highest":"#31353e","on-error-container":"#ffdad6","surface-variant":"#31353e","on-background":"#dfe2ee","on-secondary-container":"#192f00","on-secondary-fixed":"#0f2000","surface-container":"#1c2028","on-primary-fixed":"#2a1700","secondary-fixed-dim":"#96d947","error-container":"#93000a","on-tertiary-fixed-variant":"#7f2b00","on-secondary-fixed-variant":"#2e4f00","outline":"#a08e7a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"1.25rem","gutter-mobile":"1rem","gutter":"1.5rem","space-xl":"2.5rem","space-xs":"0.25rem","margin":"2.5rem","space-md":"1rem","space-lg":"1.5rem","space-sm":"0.5rem"},"fontFamily":{"label-sm":["Manrope"],"label-lg":["Manrope"],"headline-md-mobile":["Playfair Display"],"label-md":["Manrope"],"headline-md":["Playfair Display"],"body-md":["Manrope"],"title-lg":["Manrope"],"body-lg":["Manrope"],"headline-lg-mobile":["Playfair Display"],"headline-lg":["Playfair Display"],"title-md":["Manrope"],"display-mobile":["Playfair Display"],"headline-sm":["Playfair Display"],"display":["Playfair Display"]},"fontSize":{"label-sm":["11px",{"lineHeight":"14px","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"headline-md-mobile":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"600"}],"headline-md":["32px",{"lineHeight":"40px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"title-lg":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"headline-lg":["40px",{"lineHeight":"48px","fontWeight":"600"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"display-mobile":["36px",{"lineHeight":"44px","fontWeight":"700"}],"headline-sm":["24px",{"lineHeight":"32px","fontWeight":"600"}],"display":["56px",{"lineHeight":"64px","fontWeight":"700"}]}}}};</script></head>
+<body class="bg-background font-body-md text-body-md text-on-surface antialiased">
+
+<!-- ====== AMBIENT BACKGROUND SOUND ====== -->
+<audio id="ambientSound" loop preload="auto">
+<source src="https://cdn.freesound.org/previews/463/463903_4397472-lq.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ====== FIXED HEADER / NAVBAR ====== -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_4px_24px_rgba(0,0,0,0.5)]" id="main-header">
+<div class="h-16 w-full px-margin-mobile lg:px-margin flex items-center justify-between gap-space-sm max-w-[1440px] mx-auto">
+<a href="#" class="flex items-center gap-space-sm sound-btn" onclick="playClick();navigateTo('menu');return false;">
+<span class="font-headline-sm text-[18px] text-primary tracking-wide leading-none hidden sm:inline">Jayhun Choyxona</span>
+</a>
+<nav class="hidden lg:flex items-center gap-space-md">
+<a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors sound-btn" href="#" data-page="menu" onclick="playClick();navigateTo('menu');return false;">Menyu</a>
+<a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors sound-btn" href="#" data-page="halls" onclick="playClick();navigateTo('halls');return false;">Zallar</a>
+<a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors sound-btn" href="#" data-page="about" onclick="playClick();navigateTo('about');return false;">Biz haqimizda</a>
+<a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors sound-btn" href="#" data-page="admin" onclick="playClick();navigateTo('admin');return false;">Admin Panel</a>
+</nav>
+<div class="flex items-center gap-space-sm">
+<!-- Sound toggle -->
+<button id="soundToggle" class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors sound-btn" onclick="toggleSound()" title="Ovoz yoqish/o'chirish">
+<span class="material-symbols-outlined text-[18px]" id="soundIcon">volume_off</span>
+</button>
+<!-- Phone -->
+<a class="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm shadow-[0_0_16px_rgba(245,158,11,0.3)] hover:shadow-[0_0_24px_rgba(245,158,11,0.5)] transition-shadow sound-btn" href="tel:+998200097071" onclick="playClick()">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span>Qo'ng'iroq</span>
+</a>
+<!-- Mobile menu -->
+<button class="lg:hidden w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant sound-btn" onclick="playClick();toggleMobileMenu()">
+<span class="material-symbols-outlined text-[20px]" id="mobileMenuIcon">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile menu dropdown -->
+<div id="mobileMenu" class="hidden lg:hidden bg-surface-container-low/95 backdrop-blur-md px-margin-mobile py-space-md space-y-space-xs shadow-lg">
+<a class="block py-2 px-space-md rounded-lg text-on-surface hover:bg-surface-container-high transition-colors font-label-lg text-label-lg sound-btn" href="#" onclick="playClick();navigateTo('menu');toggleMobileMenu();return false;">Menyu</a>
+<a class="block py-2 px-space-md rounded-lg text-on-surface hover:bg-surface-container-high transition-colors font-label-lg text-label-lg sound-btn" href="#" onclick="playClick();navigateTo('halls');toggleMobileMenu();return false;">Zallar & Muhit</a>
+<a class="block py-2 px-space-md rounded-lg text-on-surface hover:bg-surface-container-high transition-colors font-label-lg text-label-lg sound-btn" href="#" onclick="playClick();navigateTo('about');toggleMobileMenu();return false;">Biz haqimizda</a>
+<a class="block py-2 px-space-md rounded-lg text-on-surface hover:bg-surface-container-high transition-colors font-label-lg text-label-lg sound-btn" href="#" onclick="playClick();navigateTo('admin');toggleMobileMenu();return false;">Admin Panel</a>
+<a class="block py-2 px-space-md rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg text-center sound-btn" href="tel:+998200097071" onclick="playClick()">+998 20 009 70 71</a>
+</div>
+</header>
+
+<main class="w-full pt-16 bg-background min-h-screen">
+
+<!-- ============ MENU PAGE (DEFAULT) ============ -->
+<div id="page-menu" class="page-section active">
+
+<!-- Compact Welcome Banner -->
+<section class="w-full bg-gradient-to-b from-surface-container-lowest to-background py-space-lg relative overflow-hidden">
+<div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[36rem] h-[18rem] bg-gradient-to-b from-primary-container/15 via-transparent to-transparent blur-3xl pointer-events-none"></div>
+<div class="max-w-[1320px] mx-auto px-margin-mobile lg:px-margin relative">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs mb-2">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings:'FILL' 1">stars</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed">Xorazm Milliy Taomlari</span>
+</div>
+<h1 class="font-headline-md text-headline-md-mobile lg:text-headline-md text-on-surface">Jayhun Choyxona Taomnomasi</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-lg">Khorezm, Urgench — Cholish yo'li metan zaprafka to'g'risi</p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">verified</span>100% Halol</div>
+<div class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-high text-tertiary-container font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">local_fire_department</span>Tandir & Cho'g'</div>
+<div class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">schedule</span>10:00–23:00</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Promo Banner -->
+<section class="w-full bg-gradient-to-r from-surface-container-high via-surface-container to-surface-container-high py-3 shadow-inner">
+<div class="max-w-[1320px] mx-auto px-margin-mobile lg:px-margin flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary animate-bounce shrink-0"><span class="material-symbols-outlined text-[18px]">local_fire_department</span></div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">VAQTLI AKSIYA</span>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Sho'r Kabob — maxsus chegirma narxida!</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="flex items-center gap-1 font-label-sm text-label-sm bg-surface-container-lowest px-3 py-1 rounded-full text-primary border border-primary/20"><span class="material-symbols-outlined text-[14px]">timer</span><span id="promo-timer" class="font-bold">04:45:18</span></span>
+</div>
+</div>
+</section>
+
+<!-- MENU CATALOG -->
+<section class="w-full py-space-lg bg-background" id="menu-catalog">
+<div class="max-w-[1320px] mx-auto px-margin-mobile lg:px-margin">
+<!-- Search Bar -->
+<div class="flex flex-col sm:flex-row gap-space-md items-center mb-space-md">
+<div class="relative w-full sm:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-full bg-surface-container-high text-on-surface placeholder:text-on-surface-variant text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary/50 shadow-sm sound-btn" id="menu-search-input" placeholder="Taom yoki ichimlik nomi..." type="text" oninput="playClick();filterMenu()">
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="menu-count-label">Jami: 0 ta taom</span>
+</div>
+
+<!-- Category Tabs -->
+<div class="sticky top-16 z-40 bg-background/90 backdrop-blur-md py-2 mb-space-md shadow-sm -mx-margin-mobile px-margin-mobile lg:-mx-margin lg:px-margin">
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar scroll-smooth py-1" id="category-tabs"></div>
+</div>
+
+<!-- Dishes Grid (generated by JS) -->
+<div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-space-md" id="dishes-grid"></div>
+
+<!-- No results -->
+<div class="hidden flex-col items-center justify-center py-16 text-center" id="no-dishes-alert">
+<span class="material-symbols-outlined text-[48px] text-on-surface-variant">search_off</span>
+<h4 class="font-title-lg text-title-lg text-on-surface mt-space-sm">Hech qanday taom topilmadi</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Boshqa toifani tanlang yoki qidiruv so'zini o'zgartirib ko'ring.</p>
+</div>
+</div>
+</section>
+
+<!-- Quick Reservation -->
+<section class="w-full py-space-xl bg-gradient-to-b from-background to-surface-container-low">
+<div class="max-w-[1320px] mx-auto px-margin-mobile lg:px-margin">
+<div class="relative rounded-2xl overflow-hidden p-space-lg lg:p-12 bg-surface-container-high shadow-2xl">
+<div class="absolute -top-16 -right-16 w-64 h-64 bg-primary/15 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative grid grid-cols-1 lg:grid-cols-2 gap-space-lg items-center">
+<div class="space-y-space-md">
+<span class="font-label-md text-label-md uppercase tracking-widest text-primary">Bronlash</span>
+<h2 class="font-headline-md text-headline-md-mobile lg:text-headline-md text-on-surface">Kechki ovqat uchun joy band qiling</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">VIP xonalar, tug'ilgan kunlar va marosimlar uchun oldindan joy band qilish.</p>
+<div class="flex flex-wrap gap-space-sm">
+<a class="inline-flex items-center gap-2 px-space-lg py-3 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-[0_0_20px_rgba(245,158,11,0.35)] hover:shadow-[0_0_28px_rgba(245,158,11,0.55)] transition-shadow sound-btn" href="tel:+998200097071" onclick="playClick()">
+<span class="material-symbols-outlined text-[20px]">call</span>+998 20 009 70 71
+</a>
+<button class="inline-flex items-center gap-2 px-space-lg py-3 rounded-full bg-surface-container hover:bg-surface-bright text-on-surface font-label-lg text-label-lg shadow-md transition-colors sound-btn" onclick="playClick();openMapModal()">
+<span class="material-symbols-outlined text-[20px] text-primary">near_me</span>Manzilni ko'rish
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest/80 backdrop-blur-md p-space-lg rounded-xl shadow-xl space-y-space-sm">
+<div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[24px]">schedule</span><div><h4 class="font-title-md text-title-md text-on-surface">Dam olish kunlarisiz</h4><p class="font-label-sm text-label-sm text-on-surface-variant">Har kuni 10:00 – 23:00</p></div></div>
+<div class="space-y-1 font-body-md text-body-md text-on-surface-variant">
+<div class="flex justify-between"><span>Tushlik:</span><span class="text-on-surface font-bold">12:00 – 15:00</span></div>
+<div class="flex justify-between"><span>Jonli musiqa:</span><span class="text-primary font-bold">18:30 – 22:30</span></div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container flex items-center gap-2 text-secondary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px]">electric_car</span>Katta bepul avtoturargoh</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- ============ HALLS PAGE ============ -->
+<div id="page-halls" class="page-section">
+<section class="w-full py-space-xl bg-background">
+<div class="max-w-[1320px] mx-auto px-margin-mobile lg:px-margin">
+<div class="mb-space-xl">
+<span class="font-label-md text-label-md uppercase tracking-widest text-primary">Muhit & Me'morchilik</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1">Har bir go'shada sharqona rohat</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div class="group relative rounded-2xl overflow-hidden bg-surface-container shadow-xl transition-all duration-300 hover:-translate-y-1 sound-btn" onclick="playClick()">
+<div class="relative h-64 w-full overflow-hidden"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe-CrR0JQQotp2Im49UTodeweNTiG79Md12f3E1nsTIb23r2rRjyJpi_dDOu9c1eVFAvgYQi_X6q5TCSinudcaB0ydiLZIXTzz5ibCjO8hb5kCVdJl7rcp1EGxoDbRjQlcjNjiMUAgDfonhT66NAbteRJURTkNibR8XH8GJYS6gKtL8UOsZUrcA4mhhp-fqmfYt25-wesu2vHLkJ3o7a0uPj0CnPOp32FUzF_nTyE" alt="Asosiy zal"><div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent"></div><span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-sm text-label-sm">Asosiy Mehmondorchilik</span></div>
+<div class="p-space-lg"><h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Asosiy Milliy Zal</h3><p class="font-body-md text-body-md text-on-surface-variant mt-1">Katta jamoalar uchun keng maydon. Jonli dutor va tanbur kuylari.</p><div class="pt-2 flex items-center text-primary font-label-md text-label-md gap-1"><span>80 kishilik</span><span class="material-symbols-outlined text-[16px]">groups</span></div></div>
+</div>
+<div class="group relative rounded-2xl overflow-hidden bg-surface-container shadow-xl transition-all duration-300 hover:-translate-y-1 sound-btn" onclick="playClick()">
+<div class="relative h-64 w-full overflow-hidden"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4lQvmL1vc2B8D0AzUIJLkEHQCMERdrVPumZTnEpeUExmVlCk942Tk9QjkO4zSzkwvwG3yCRqx9Xt4ZnZxZtkIqRKTU1vBAlXmWon9kelGH_GmIr_D5Iml2nG1sol9QXU9rgf-IB72ahDewMxqzRFxSWeytPbqVwjcIEeobYF0BRs5BBdLnkatIZs5r_y1WXYPN-7yR9AWvYadmak9bfSK2JucXPObYOAtsogbuy4" alt="VIP xona"><div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent"></div><span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-tertiary font-label-sm text-label-sm">Xususiy & Maxfiy</span></div>
+<div class="p-space-lg"><h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">VIP & Oila Xonalari</h3><p class="font-body-md text-body-md text-on-surface-variant mt-1">Alohida sokin xonalar. Shaxsiy ofitsiant xizmati.</p><div class="pt-2 flex items-center text-primary font-label-md text-label-md gap-1"><span>6–16 kishilik</span><span class="material-symbols-outlined text-[16px]">meeting_room</span></div></div>
+</div>
+<div class="group relative rounded-2xl overflow-hidden bg-surface-container shadow-xl transition-all duration-300 hover:-translate-y-1 sound-btn" onclick="playClick()">
+<div class="relative h-64 w-full overflow-hidden"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFP4ku58_Ubg89FLadJrRr4hW76SmoOAxXCTUeaZGCpC6v7yDfI1dDfWDlH8RKXYqUfVVYrsVsqIfdFMJDMCAgOQs7vZtoS6yWeUuC9gP5VHLvUT2bn3aE5i8GgkhkV-GAAMnHNkfn1ZszZRlyvt9upN911NuyYIVKYc-8VezdxbSxmR8iZGwxMJDHga1QjUEyRmgy0SAPkBGGFK47fkN-5FyKp57ywvK5YsBHYwQ" alt="Terrasa"><div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent"></div><span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-secondary font-label-sm text-label-sm">Toza Havo</span></div>
+<div class="p-space-lg"><h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Yozgi Terrasa & Choyxona</h3><p class="font-body-md text-body-md text-on-surface-variant mt-1">Favvora shildirashi va yulduzlar ostida choy marosimi.</p><div class="pt-2 flex items-center text-primary font-label-md text-label-md gap-1"><span>Mavsumiy ochiq</span><span class="material-symbols-outlined text-[16px]">deck</span></div></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- ============ ABOUT PAGE ============ -->
+<div id="page-about" class="page-section">
+<section class="w-full py-space-xl bg-background">
+<div class="max-w-[1320px] mx-auto px-margin-mobile lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-xl items-center">
+<div class="space-y-space-md">
+<span class="font-label-md text-label-md uppercase tracking-widest text-primary">Jayhun Choyxona</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Xorazm milliy taomlari va mehmondo'stlik</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">Asl Xorazm pazandalik an'analari Urgench shahrida. Olov harorati, tandoor nuri va sokin muhitda unutilmas tajriba.</p>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container"><span class="font-headline-md text-headline-md text-primary">80+</span><p class="font-label-sm text-label-sm text-on-surface-variant">Milliy taomlar</p></div>
+<div class="p-space-md rounded-xl bg-surface-container"><span class="font-headline-md text-headline-md text-primary">100%</span><p class="font-label-sm text-label-sm text-on-surface-variant">Halol sertifikati</p></div>
+<div class="p-space-md rounded-xl bg-surface-container"><span class="font-headline-md text-headline-md text-primary">3</span><p class="font-label-sm text-label-sm text-on-surface-variant">Shinam zallar</p></div>
+<div class="p-space-md rounded-xl bg-surface-container"><span class="font-headline-md text-headline-md text-primary">VIP</span><p class="font-label-sm text-label-sm text-on-surface-variant">Shaxsiy xonalar</p></div>
+</div>
+</div>
+<div class="space-y-space-md">
+<div class="rounded-2xl overflow-hidden shadow-xl"><img class="w-full h-72 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6vKEg_BlJR6jtlllxZ9c4yU0VnPr0h62D2x3yY4B8NcJDWw0mwm8PmNAtPDZ7rkjUxb7601Ax8gTANpHO3KzwfyQ1BJ6fl39wy_iMnTrC1GXTzWpr_44VxQSdCzweKvSeKmRNj6nhTl9oc4r1zgW7HfepETZYeCAj4xdFyVs_w-P8DwWgkU1BkVesBbd-GMgOZlx7x2WabomZPuSmdQdbDRdmOv7Trc1Hn9ULZfc" alt="Jayhun restoran"></div>
+<div class="bg-surface-container-high p-space-lg rounded-xl">
+<h4 class="font-title-md text-title-md text-on-surface mb-2">Manzil</h4>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-start gap-2"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">location_on</span>Khorezm, Urgench, Cholish yo'li metan zaprafka to'g'risi</p>
+<div class="mt-space-sm space-y-1">
+<a class="flex items-center gap-2 text-primary font-label-lg text-label-lg hover:underline sound-btn" href="tel:+998200097071" onclick="playClick()"><span class="material-symbols-outlined text-[16px]">call</span>+998 20 009 70 71</a>
+<a class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md hover:text-primary sound-btn" href="#" onclick="playClick()"><span class="material-symbols-outlined text-[16px]">photo_camera</span>@jayhun_choyxona</a>
+<a class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md hover:text-primary sound-btn" href="#" onclick="playClick()"><span class="material-symbols-outlined text-[16px]">send</span>Telegram: @jayhun_choyxona</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- ============ ADMIN PANEL ============ -->
+<div id="page-admin" class="page-section">
+<section class="w-full py-space-lg bg-background">
+<div class="max-w-[1400px] mx-auto px-margin-mobile lg:px-margin">
+<!-- Admin Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-lg">
+<div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md mb-1"><span>Jayhun Admin</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-primary font-bold">Taomnoma Boshqaruvi</span></div>
+<h1 class="font-headline-md text-headline-md text-on-surface">Oshxona & Narx Siyosati</h1>
+</div>
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg sound-btn" onclick="playClick();navigateTo('menu')"><span class="material-symbols-outlined text-[16px] align-middle">arrow_back</span> Menyuga qaytish</button>
+</div>
+<!-- KPI Cards -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<div class="rounded-xl bg-surface-container p-space-md shadow-md"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Jami taomlar</span><div class="mt-1"><span class="font-headline-md text-headline-md text-on-surface font-bold" id="admin-total-count">0</span></div></div>
+<div class="rounded-xl bg-surface-container p-space-md shadow-md"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Kategoriyalar</span><div class="mt-1"><span class="font-headline-md text-headline-md text-on-surface font-bold">10</span></div></div>
+<div class="rounded-xl bg-surface-container p-space-md shadow-md"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Aksiyadagi</span><div class="mt-1"><span class="font-headline-md text-headline-md text-on-surface font-bold">1</span></div></div>
+<div class="rounded-xl bg-surface-container p-space-md shadow-md"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Bugungi buyurtma</span><div class="mt-1"><span class="font-headline-md text-headline-md text-on-surface font-bold">142</span></div></div>
+</div>
+<!-- Action Bar -->
+<div class="bg-surface-container p-space-md rounded-xl shadow-md mb-space-md flex flex-col sm:flex-row gap-space-md items-center justify-between">
+<div class="flex gap-space-md items-center w-full sm:w-auto">
+<div class="relative flex-1 sm:w-72"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant rounded-lg pl-9 pr-3 py-2 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/40" id="admin-search" placeholder="Taom qidirish..." oninput="filterAdminTable()"></div>
+<select class="bg-surface-container-low text-on-surface rounded-lg px-3 py-2 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer" id="admin-cat-filter" onchange="filterAdminTable()"><option value="ALL">Barcha kategoriyalar</option></select>
+</div>
+<button class="px-space-lg py-2 rounded-lg bg-gradient-to-r from-primary-container to-inverse-primary text-on-primary font-label-lg text-label-lg flex items-center gap-2 hover:shadow-[0_0_20px_rgba(245,158,11,0.35)] transition-all sound-btn" onclick="playClick();openAdminModal()"><span class="material-symbols-outlined text-[18px]">add</span>Yangi taom</button>
+</div>
+<!-- Admin Table -->
+<div class="bg-surface-container rounded-xl shadow-md overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left" id="admin-table">
+<thead><tr class="bg-surface-container-high text-on-surface-variant font-label-md text-label-md"><th class="py-3 px-4 w-12">#</th><th class="py-3 px-4">Taom nomi</th><th class="py-3 px-4">Kategoriya</th><th class="py-3 px-4">Narx</th><th class="py-3 px-4">Status</th><th class="py-3 px-4 text-right">Amallar</th></tr></thead>
+<tbody id="admin-table-body"></tbody>
+</table>
+</div>
+<div class="px-4 py-3 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm" id="admin-table-footer">Ko'rsatilmoqda: 0 ta</div>
+</div>
+</div>
+</section>
+<!-- Admin Modal -->
+<div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-surface-container-lowest/80 backdrop-blur-md hidden" id="admin-modal">
+<div class="bg-surface-container-high w-full max-w-lg rounded-2xl p-space-lg shadow-2xl max-h-[90vh] overflow-y-auto">
+<div class="flex items-center justify-between mb-space-md"><h2 class="font-headline-sm text-headline-sm text-on-surface" id="admin-modal-title">Yangi taom qo'shish</h2><button class="text-on-surface-variant hover:text-on-surface sound-btn" onclick="playClick();closeAdminModal()"><span class="material-symbols-outlined">close</span></button></div>
+<form id="admin-form" onsubmit="handleAdminSubmit(event)" class="space-y-space-md">
+<div><label class="font-label-md text-label-md text-on-surface block mb-1">Taom nomi *</label><input class="w-full bg-surface-container-low text-on-surface rounded-lg px-3 py-2 font-body-md focus:outline-none focus:ring-2 focus:ring-primary/40" id="admin-dish-name" required></div>
+<div class="grid grid-cols-2 gap-space-md">
+<div><label class="font-label-md text-label-md text-on-surface block mb-1">Kategoriya</label><select class="w-full bg-surface-container-low text-on-surface rounded-lg px-3 py-2 font-body-md focus:outline-none focus:ring-2 focus:ring-primary/40" id="admin-dish-cat"></select></div>
+<div><label class="font-label-md text-label-md text-on-surface block mb-1">Narx (UZS)</label><input type="number" class="w-full bg-surface-container-low text-on-surface rounded-lg px-3 py-2 font-body-md focus:outline-none focus:ring-2 focus:ring-primary/40" id="admin-dish-price"></div>
+</div>
+<div><label class="font-label-md text-label-md text-on-surface block mb-1">Tavsif</label><textarea class="w-full bg-surface-container-low text-on-surface rounded-lg px-3 py-2 font-body-md focus:outline-none focus:ring-2 focus:ring-primary/40" id="admin-dish-desc" rows="2"></textarea></div>
+<div class="flex justify-end gap-space-md"><button type="button" class="px-space-lg py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant font-label-md sound-btn" onclick="playClick();closeAdminModal()">Bekor qilish</button><button type="submit" class="px-space-lg py-2 rounded-lg bg-gradient-to-r from-primary-container to-inverse-primary text-on-primary font-label-md font-bold sound-btn" onclick="playClick()">Saqlash</button></div>
+</form>
+</div>
+</div>
+</div>
+
+<!-- ====== MAP MODAL ====== -->
+<div class="fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md" id="map-modal">
+<div class="relative w-full max-w-3xl rounded-2xl bg-surface-container-high shadow-2xl overflow-hidden">
+<div class="p-space-md bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[24px]">location_on</span><div><h3 class="font-title-lg text-title-lg text-on-surface">Jayhun Choyxona</h3><p class="font-label-sm text-label-sm text-on-surface-variant">Khorezm, Urgench, Cholish yo'li metan zaprafka to'g'risi</p></div></div>
+<button class="w-8 h-8 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface flex items-center justify-center sound-btn" onclick="playClick();closeMapModal()"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div class="relative w-full h-72 bg-surface-container-lowest">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48896.96!2d60.63!3d41.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDMzJzAwLjAiTiA2MMKwMzgnMDAuMCJF!5e0!3m2!1suz!2s!4v1" width="100%" height="100%" style="border:0" allowfullscreen loading="lazy"></iframe>
+</div>
+<div class="p-space-md bg-surface-container flex flex-wrap items-center justify-between gap-space-sm">
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1 sound-btn" href="tel:+998200097071" onclick="playClick()"><span class="material-symbols-outlined text-[16px]">call</span>+998 20 009 70 71</a>
+<button class="px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md sound-btn" onclick="playClick();closeMapModal()">Yopish</button>
+</div>
+</div>
+</div>
+
+<!-- ====== FLOATING CART PILL ====== -->
+<div class="fixed bottom-5 right-5 z-40 hidden items-center gap-2 px-3 py-2 rounded-full bg-surface-container-highest/95 backdrop-blur-md shadow-2xl transition-all" id="quick-order-pill">
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-label-sm" id="cart-counter">0</div>
+<div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface" id="cart-last-item">Taom tanlandi</span><span class="font-label-sm text-[10px] text-primary" id="cart-total-price">0 UZS</span></div>
+<a class="ml-1 px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1 sound-btn" href="tel:+998200097071" onclick="playClick()"><span class="material-symbols-outlined text-[14px]">phone</span>Buyurtma</a>
+</div>
+
+<!-- ====== TOAST ====== -->
+<div class="fixed bottom-5 left-5 z-[70] flex items-center gap-2 px-4 py-3 rounded-xl bg-surface-container-highest text-on-surface shadow-2xl translate-y-20 opacity-0 transition-all duration-300 pointer-events-none" id="toast">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span id="toast-msg" class="font-label-md text-label-md">Saqlandi!</span>
+</div>
+
+</main>
+
+<!-- ====== FOOTER ====== -->
+<footer class="w-full bg-surface-container-lowest text-on-surface-variant py-space-xl">
+<div class="max-w-[1320px] mx-auto px-margin-mobile lg:px-margin">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<div><span class="font-headline-sm text-headline-sm text-primary">Jayhun Choyxona</span><p class="font-body-md text-body-md text-on-surface-variant mt-2">Xorazm milliy taomlari va mehmondo'stlik durdonasi.</p></div>
+<div><h4 class="font-title-md text-title-md text-on-surface mb-2">Ish vaqti</h4><p class="font-body-md text-body-md text-on-surface">Har kuni 10:00 – 23:00</p><p class="font-body-md text-body-md text-on-surface-variant">Dam olish kunlarisiz</p></div>
+<div><h4 class="font-title-md text-title-md text-on-surface mb-2">Aloqa</h4><a class="flex items-center gap-2 text-on-surface-variant hover:text-primary font-body-md sound-btn" href="tel:+998200097071" onclick="playClick()"><span class="material-symbols-outlined text-[16px] text-primary">call</span>+998 20 009 70 71</a></div>
+<div><h4 class="font-title-md text-title-md text-on-surface mb-2">Manzil</h4><p class="font-body-md text-body-md text-on-surface-variant flex items-start gap-1"><span class="material-symbols-outlined text-primary text-[16px] mt-0.5">location_on</span>Khorezm, Urgench, Cholish yo'li metan zaprafka to'g'risi</p>
+<button class="mt-2 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-primary font-label-md text-label-md transition-colors sound-btn" onclick="playClick();openMapModal()"><span class="material-symbols-outlined text-[16px]">map</span>Xaritada</button>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant">&copy; 2026 Jayhun Choyxona. Barcha huquqlar himoyalangan.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">restaurant</span>Xorazm milliy taomlari</p>
+</div>
+</div>
+</footer>
+
+<script>
+// ============================
+// FULL MENU DATA (80+ items)
+// ============================
+const MENU_DATA = [
+  // ===== SUYUQ TAOMLAR =====
+  {name:"Osma sho'rva",cat:"suyuq",price:25000,desc:"Qo'zi go'shti, noxat va sabzavotlar bilan tiniq sho'rva",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuDZNVZpw0lFLJYFCPixDdErmPi-OgqzmRluhzgOvBZ5gcx44FzcyX9aNC_XWN8VEeY2Vb2gPieOHRGUoc5POHwNnNejRqhm0QV_zLxiqBjIZZsbsYyY__kGAy1v4ipIy2i_8u1LBjo7HS8wiFgZqoNT-sOC7Ydiow92Y9Qu_Iq5jojutE4VHR0Qu4SIbsJugO921ZYu8rhss_83oX0OxrKF6KrjziNjsD9RsvmHO4E"},
+  {name:"Mastova",cat:"suyuq",price:25000,desc:"Guruch, mayda go'sht va qatiq bilan to'yimli sho'rva",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCX0_FlFt1ysGeAKyttceh_tUtpdypU-XbBlybldk2KSuQ9SenIB4pGZGvCeFM_7RSMpCgCqkc_2EDwNM-SyNOXSn2zUuPizTD1gS40mqx8mTEcSszUTQMojpYRc0EAO4yo-x-kjvDoNKloj7VopGrT9LU9FD0VbsPxEdRediBwkUyYj7xGNfX_Blb8G3fE6IMMsRh0feEzX_L2aaWK2cj0nU-ujOnUc9YqOMeuVqc"},
+  {name:"Narxat sho'rva",cat:"suyuq",price:30000,desc:"Xorazm an'anaviy noxat va go'shtli quyuq sho'rva"},
+  {name:"Dimlama sho'rva",cat:"suyuq",price:28000,desc:"Sabzavotlar va go'sht bilan sekin dimlab pishirilgan sho'rva"},
+  {name:"Chuchvara sho'rva",cat:"suyuq",price:10000,desc:"Mayda go'shtli chuchvaralar bilan issiq sho'rva"},
+  // ===== GO'SHTLI TAOMLAR =====
+  {name:"Xon assorti",cat:"gosht",price:700000,desc:"4-6 kishilik shohona go'sht jamlanmasi",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuDhVG0MpmvP6RdOKZjWps3xNDbYB8jEZalVph4fCeux99t8HPOBQJ5PjDbezmDQ7LSw6SjRz2UqdkxwThkf8JOXpoxvxKf1YwuBdr7-Rc9iCwNJ0Fj24n8EBcO2WT4A-yTR6njlc3CGUEQUXu-xiEUu1CT6aCnJgr-kEhByLFG0oBkQyaIHL_mY3FcavGk0EPc-EdWUvPPR6l73mQGFPB_lwCYJQq9kqegxlG2cCIk",badge:"Eng mashhur"},
+  {name:"Jayhun assorti",cat:"gosht",price:380000,desc:"Restoran maxsus go'shtli lagan",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuAJrfs99FQn5Y3Bsj-cZWwRYD5Vw-D-Tg9N9_ojxYnsqG3mLyUH4xJSi04rprDsEyHSR6tC2TgTSOBNMO8p76mOPFr97lbcMmUNhX3DfWYiH1SqksDdsn7YKiY_pj0tjztU46_MWM4osgTG5Dp2feDC5OPdUey2JfMdE-1nHsuRuByWC4brnlY-iqBETXooZxGCwRN2Lht8mGa1u07RejNRG3-v88AhZr_-d1V3Krs"},
+  {name:"Sho'r kabob",cat:"gosht",price:230000,salePrice:185000,desc:"Suyakli qo'zichoq go'shti maxsus usulda",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCry-fdz_3c5cu1xZnbosXDlA9ngQlcNvHcq-fM_Vn6h0gV8dDD_X3Ng5gp7BlmdsO61JJF2wAw693zDfgvEinJNtlfPTBq3IqNFW7712hxt5kDYfFfqgWJVdf6aEcSY5ZfsSjmQuhl2r5UWcJrCDSFb292fBfmMbRT-fimaiXuu3MRxCReatCkNoDw-s8XbXlaJLT3HGdPx44wR8ykxvbMMUbMV4uBPpObAqd1UMM",badge:"Aksiya -20%"},
+  {name:"Qaymoqa kabob",cat:"gosht",price:230000,desc:"Xorazmcha qaymoqda dimlab pishirilgan go'sht",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuD9lGGuPGVQoVkAHd6fY-TZqtGtHETrPKIdra6WdeH_dR-v-dlSaHs9koDhC1PSQa1Cb3w0FxFdH-fN-9jinzxU803Y3jzp7VAL7JY0ezCt60imXMB5TWjqgDREfI1Gmjxx8Gp348q6RLHTBjrlddx4WikobWD70EnhCLVyuPe2wlKw_Rh21grPuel-6hi8Imxi11Swm7coie1TO1yycv5fEAj1jP0yWmzqX7V76qk"},
+  {name:"G'o'sht qovurma",cat:"gosht",price:120000,desc:"An'anaviy Xorazm g'o'sht qovurmasi"},
+  {name:"Do'lma",cat:"gosht",price:85000,desc:"Uzum bargi va go'sht bilan tayyorlangan do'lma"},
+  {name:"Cho'p shashlik (mol)",cat:"gosht",price:20000,desc:"Cho'p shashlik mol go'shtidan (1 dona)"},
+  {name:"Cho'p shashlik (qo'y)",cat:"gosht",price:22000,desc:"Cho'p shashlik qo'y go'shtidan (1 dona)"},
+  {name:"Qovurdoq",cat:"gosht",price:110000,desc:"Kartoshka bilan qovurilgan go'sht"},
+  {name:"Tandirda pishgan go'sht",cat:"gosht",price:180000,desc:"Tandirda butun holda pishirilgan mol go'shti"},
+  {name:"Qozon kabob",cat:"gosht",price:200000,desc:"Qozonda maxsus dimlab tayyorlangan kabob"},
+  {name:"Norin",cat:"gosht",price:90000,desc:"Ingichka qirqilgan xamir va qaynatilgan go'sht"},
+  {name:"Dimlama",cat:"gosht",price:95000,desc:"Sabzavot va go'sht bilan qozonda dimlangan taom"},
+  {name:"Hasip",cat:"gosht",price:55000,desc:"Milliy go'shtli hasip kolbasa"},
+  {name:"Jiz",cat:"gosht",price:140000,desc:"Qo'y yog'ida qovurilgan go'sht va jigar"},
+  {name:"Qovurma lag'mon",cat:"gosht",price:35000,desc:"Qovurilgan lag'mon"},
+  {name:"Bosma lag'mon",cat:"gosht",price:35000,desc:"Bosma usulida tayyorlangan lag'mon"},
+  {name:"Tandir go'sht",cat:"gosht",price:160000,desc:"Tandirda maxsus usulda pishirilgan go'sht"},
+  {name:"Tuxum do'lma",cat:"gosht",price:60000,desc:"Tuxumli do'lma Xorazm uslubida"},
+  {name:"Tandirda qovurdoq",cat:"gosht",price:130000,desc:"Tandirda pishirilgan qovurdoq"},
+  // ===== TOVUQ GO'SHTLI =====
+  {name:"Tandir tovuq",cat:"tovuq",price:85000,desc:"Tandirda maxsus qizartirilgan butun tovuq",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuDb1-cub1PdjE9LSK1rvTC-iO8mAo6kgWawSvDpTlI0QyO5NIqU7COV0XwxkLT5zOqKAfQhQLcQwxYXywEdIzNPjUzFEfzSASUM7sacSCHhjAOJAygEZHdrveeMOicJYxuA0ue2zNlGY8kvNUhxGu-AOXQXrnhIV_CL9b0ev4SSxon8u_dXf1nawa41-EJGULu_TDci5KvpSP77tTnDiA-2AklTd7YdQ5GboEN6IXY"},
+  {name:"Tovuq kabob",cat:"tovuq",price:75000,desc:"Maxsus marinaddagi tovuq go'shti kabob"},
+  {name:"Tovuq qovurma",cat:"tovuq",price:80000,desc:"Sabzavotlar bilan qovurilgan tovuq"},
+  {name:"Tovuq shashlik",cat:"tovuq",price:15000,desc:"Mangalda pishirilgan tovuq shashlik (1 dona)"},
+  // ===== XAMIR OVQATLAR =====
+  {name:"Besbarmoq",cat:"xamir",price:250000,desc:"Yoyma mayin xamir va qaynatilgan sarxil go'sht",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuBSRgKhH_WgoW94oVV2PnuHQVzmgYkWZubYklZKIfsn-_s83B4BzYVvd-uv77r7lU0r95_ojpUdu9cZTm3uDN1KJ_rUcA97WW4CwFLld-vOKjtMR2QgCf9EtTi0VXlBGU_1hRAnza_GkRBb5nziOfuwuPcrdwIiUtPnrQ7SPz5FMHn7xH1iwc7EgNHamtcKqvcX1hlTwVFmr26vXPegHDjrX4GzrqsFofg5FmlNsE0"},
+  {name:"Tuxim barak",cat:"xamir",price:40000,desc:"Xorazm faxri — tuxumli mayin baraklar",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuBxpM5KkPR1abG7mTZpZKgKTCLBzqTIdnEAeGnL9CpdH4DVI70EPTH4stmrCj-qVI5hpfrec7uZHQeTddJ9ZagWwEMnFho4tTM9hdQbamWYC1hFwQE532KTh34ZsalGJx2kUbiGKjoM9XPHomQOXDaLsrPh_m-2tuLHJqvt1sDs2EqFSuCiAS7MDVeBf1psQAP8lw7GzNnVCugiJp2nDesjelTNHBpS-cNlmbxX_P8"},
+  {name:"Barak assorti",cat:"xamir",price:80000,desc:"Go'shtli va tuximli baraklar jamlanmasi",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuA4t1JlPw2xRux-Zcl1a0f7dQuudQX-h7juX7JO3sFEzEpnr8hNlalrYziOt_TGc7NwWSSt36Ea09tviqIXNBsY0sQjAzZiNoF5uGfdDIGzz-Q5Bm4AKesWe_B0w0eUS29bWqOYy6leYUAt6HxmaUkPvnKwbj2NiFHZFRzFP0U9E46SO0LLqDbwFn6RErWLNMowVSHBcZ3s3A_gogcmlmz-BFiZQ6ceEk0L6r58uLA"},
+  {name:"Manti",cat:"xamir",price:30000,desc:"Go'shtli maxsus manti"},
+  {name:"Chuchvara",cat:"xamir",price:30000,desc:"Mayda go'shtli chuchvara"},
+  {name:"Go'shtli lag'mon",cat:"xamir",price:35000,desc:"Qo'lda cho'zilgan lag'mon go'sht va sabzavotlar bilan"},
+  // ===== SALATLAR =====
+  {name:"Achik chuchik",cat:"salat",price:15000,desc:"Yupqa to'g'ralgan pomidor, piyoz va rayhon",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCa6U3xTZvEUGQQoi6J7Nn4st2DP6eAxdp1p4TMZArDx9JXusXzHvjsBYIh43JLQVF75VQ7zaTnfTf9JUrj6FRdjshoVHQsIdW8XDY6hGtuWgxDiYan2YWfIbLEmlm-nU2Phy_wVDwLECtGXilpnOhBUBG0z_xvTbNjEYK0oSyATrQbBQfdOoqLnTebvv5y8Bt8IIg3Ku8oWZ00rh4OHKCCfUphswf2uFmL7NTX9II"},
+  {name:"Pomidor-bodring salat",cat:"salat",price:0,desc:"Yangi pomidor va bodring salati"},
+  {name:"Karam salat",cat:"salat",price:0,desc:"Yangi karam salati"},
+  {name:"Ko'k salat",cat:"salat",price:0,desc:"Turli ko'katlar bilan tayyorlangan salat"},
+  {name:"Sezar salat",cat:"salat",price:0,desc:"Klassik Sezar salati"},
+  {name:"Buxoro salat",cat:"salat",price:0,desc:"Buxoro uslubidagi an'anaviy salat"},
+  {name:"Olivye",cat:"salat",price:0,desc:"Klassik Olivye salati"},
+  {name:"Do'stlik salat",cat:"salat",price:0,desc:"Turli sabzavotlardan tayyorlangan salat"},
+  {name:"Jayhun salat",cat:"salat",price:0,desc:"Restorananing maxsus salati"},
+  {name:"Mayonezli salat",cat:"salat",price:0,desc:"Mayonez bilan tayyorlangan salat"},
+  {name:"Vinegret",cat:"salat",price:0,desc:"An'anaviy vinegret salati"},
+  {name:"Ko'katlar assorti",cat:"salat",price:0,desc:"Turli yangi ko'katlar majmuasi"},
+  // ===== BALIQLAR =====
+  {name:"So'lli baliq",cat:"baliq",price:135000,desc:"Xorazm uslubida qovurilgan chuchuk suv balig'i",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuAq9aRwrDBuo3jVqwaQ1hRjwIcI09UsFpDvvrzOy47Ik3FE0HYcIelyEgAft0EY_oNHStWdwCkqvSeVnt0v6_dRSNd-7_revf_b88ThuTOmfQYMO4p984wLQbr0VzjBWWT0OZ3OIwgb0lTFVCbS50LMvM6FgrD7dRaKdbAXt6k4a75Lwca1Yc1JdEgCALeUbu1HcRGNFmIoI30wGJlkeXHzVbcTME5qAUE_3RST4zE"},
+  {name:"Qovurma baliq",cat:"baliq",price:0,desc:"Maxsus qovurilgan daryoiy baliq"},
+  {name:"Setka baliq",cat:"baliq",price:0,desc:"Setka usulida pishirilgan baliq"},
+  {name:"Baliq shashlik",cat:"baliq",price:0,desc:"Mangalda pishirilgan baliq shashlik"},
+  {name:"Bug'langan baliq",cat:"baliq",price:0,desc:"Bug'da pishirilgan sog'lom baliq taomi"},
+  // ===== SOUSLAR =====
+  {name:"Ketchup",cat:"sous",price:0,desc:"Pomidor sousi"},
+  {name:"Mayonez",cat:"sous",price:0,desc:"Klassik mayonez sousi"},
+  {name:"Smetana",cat:"sous",price:0,desc:"Tabiiy smetana"},
+  {name:"Achchiq sous",cat:"sous",price:0,desc:"Maxsus achchiq qalampir sousi"},
+  {name:"Sarimsoqli sous",cat:"sous",price:0,desc:"Sarimsoq bilan tayyorlangan sous"},
+  {name:"Suzma",cat:"sous",price:0,desc:"An'anaviy tabiiy suzma"},
+  // ===== NONLAR =====
+  {name:"Patir non",cat:"non",price:14000,desc:"Sariyog'li qatlama tandir noni",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCupolIRjBORw4Ly0UU0Y9wz1H1Ua8YSwJpNf_wgBy2Z5EDHREroKnMXENHwiVEd9qz5HFhmE3VmTY5UOmySuRNwVXvAk3i747Og6xuglmg8DdjRpWcv_CLriRSu1MM1vUk9I1xfq-a5aiQncIeNAbzelOWpx2dU125_HetowMmYjHfKHeYQG-B3JnExoSJRyRX_fedC7_W1GVL_sukr9BWkx7h7fmlMCtw5GXWXAQ"},
+  {name:"Non assorti",cat:"non",price:25000,desc:"Turli tandir nonlaridan jamlanma"},
+  {name:"Tandirda yopilgan non",cat:"non",price:0,desc:"An'anaviy tandirda yopilgan yumshoq non"},
+  {name:"Obi non",cat:"non",price:0,desc:"Oddiy obi non"},
+  {name:"Yupqa non",cat:"non",price:0,desc:"Yupqa tandirda pishirilgan non"},
+  {name:"Qatlama non",cat:"non",price:0,desc:"Qatlamali tandirda pishirilgan non"},
+  // ===== SHASHLIKLAR =====
+  {name:"G'ijduvon shashlik",cat:"shashlik",price:18000,desc:"Mayda qiyma shashlik (1 dona)",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuAU6pTmeH0AdOjjaKASlFqiNpvDLyFBKNsEJavBI9_EwD-2yyaJPgIZQ4sQiMGsNRaEj0ZRj7XJH40OxuEGJ8eMJ3Kch96GpdK8VAjJU8UyEODjVYdfyEoV3YSyasnM18i9VLqUET12wC9ris22Pql-la1qso304mmtJBRDs33FmEa45XvT_7wCzoc8-oM9IZGM_MseVvJQnV3dk-wHPgs6YzboVoxPq7rYwuPQNZU"},
+  {name:"Ijjon shashlik",cat:"shashlik",price:13000,desc:"Mayda qiyma dumba yog'li shashlik (1 dona)",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuAPARotUjb6tVXHtRyxhI0qOBsFno1OJdKzpSiyNLSy5SLFOCXoVO060CvBPu6_8KyytTDRZYErNVKv4OtOJurB4mC5BIIZh9iqZX33qXI4kfiYjGFLDd4FpsgmQyLube0K_M-smNH6oU4Ex21VpXyhht50CH3YQuYEQi4JLUEUcQvYmGVFeFxYnnhcQKXvdP5rVVSzkxXieZnw3A6byoY_S8IDBMdklZYTuFdjdHg"},
+  {name:"Tandir somsa",cat:"shashlik",price:12000,desc:"Tandirda pishgan qarsildoq somsa",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuBJ8Pvf2dh45csZVBzEzIe4jwIx8-fTeQ_jXsnNibHnSNdZSmjYThRTtXpmrPfrudL9u9xM02-Lv4zcxAqcMgBC3VyjC9SdgTgnoh0XnmUGW-pl-5uei3C2NvwxS8F6bzjIKTOz_EO9xo8YlT74NWVK3hM8s7QniLX7NZo7atrR-ktRlbbJs_KHGlsS2yO49Trcv8mxayasx-E_LwGBliHONI1T1xGgnSTpZNdWfiI",badge:"Eng mashhur"},
+  {name:"Achchiq somsa",cat:"shashlik",price:12000,desc:"Achchiq qalampirli maxsus somsa"},
+  {name:"Mol shashlik",cat:"shashlik",price:20000,desc:"Mol go'shtidan tayyorlangan shashlik (1 dona)"},
+  {name:"Qo'y shashlik",cat:"shashlik",price:22000,desc:"Qo'y go'shtidan shashlik (1 dona)"},
+  {name:"Jigar shashlik",cat:"shashlik",price:14000,desc:"Mol jigaridan pishirilgan shashlik"},
+  {name:"Dumba shashlik",cat:"shashlik",price:10000,desc:"Dumba yog'idan shashlik (1 dona)"},
+  {name:"Qiyma kabob",cat:"shashlik",price:15000,desc:"Qiyma go'shtdan mangalda pishirilgan kabob"},
+  {name:"Qovurg'a shashlik",cat:"shashlik",price:25000,desc:"Qovurg'a go'shtdan shashlik"},
+  {name:"To'yona shashlik",cat:"shashlik",price:28000,desc:"Maxsus to'y uchun tayyorlangan shashlik"},
+  {name:"Lula kabob",cat:"shashlik",price:18000,desc:"Uzun lula shaklidagi qiyma kabob"},
+  // ===== ICHIMLIKLAR =====
+  {name:"Choy (1 choynek)",cat:"ichimlik",price:4000,desc:"Ko'k yoki qora choy 1 choynakda",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCmXmRgUcE-T-hgikLlLQIGQjnXPwrh1WvPaclBaKkDiH1z2G0CAqgc_vgt1tzM7COZQ55P0y8FxcyKOJLBOZyTyq-nihktEkdfg0q8Gw0k3xyf-Kkw4zo6fTDdZhpCGIpNuMIYtLij_hQCmdOZevuU6oAglsu1EeXVDi7M_IupgWEZNJ4FcO_9dzOaiDRlqSv3HmS9M8MXMYmYqKV_ZAEMfJx7PPjEbVu2eAx5rss"},
+  {name:"Eliksir (Jayhun maxsus)",cat:"ichimlik",price:65000,desc:"Maxsus giyohli shifobaxsh ichimlik"},
+  {name:"Anor sharbat",cat:"ichimlik",price:10000,desc:"Tabiiy siqilgan anor sharbati"},
+  {name:"Kapchonka",cat:"ichimlik",price:10000,desc:"Milliy uslubdagi issiq ichimlik"}
+];
+
+const CAT_LABELS = {
+  "suyuq":"Suyuq taomlar","gosht":"Go'shtli taomlar","tovuq":"Tovuq go'shtli","xamir":"Xamir ovqatlar",
+  "salat":"Salatlar","baliq":"Baliqlar","sous":"Souslar","non":"Nonlar","shashlik":"Shashlik & Somsa","ichimlik":"Ichimliklar"
+};
+const CAT_ICONS = {
+  "suyuq":"soup_kitchen","gosht":"lunch_dining","tovuq":"egg_alt","xamir":"bakery_dining",
+  "salat":"eco","baliq":"set_meal","sous":"water_drop","non":"cookie","shashlik":"outdoor_grill","ichimlik":"local_cafe"
+};
+const CAT_ORDER = ["suyuq","gosht","tovuq","xamir","salat","baliq","sous","non","shashlik","ichimlik"];
+
+// ============================
+// SOUND SYSTEM
+// ============================
+let soundEnabled = false;
+const ambientAudio = document.getElementById('ambientSound');
+
+// Create click sound using Web Audio API
+let audioCtx;
+function initAudioCtx(){if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)()}
+
+function playClick(){
+  if(!soundEnabled)return;
+  try{
+    initAudioCtx();
+    const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+    o.connect(g);g.connect(audioCtx.destination);
+    o.type='sine';o.frequency.setValueAtTime(800,audioCtx.currentTime);
+    o.frequency.exponentialRampToValueAtTime(400,audioCtx.currentTime+0.08);
+    g.gain.setValueAtTime(0.08,audioCtx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001,audioCtx.currentTime+0.1);
+    o.start(audioCtx.currentTime);o.stop(audioCtx.currentTime+0.1);
+  }catch(e){}
+}
+
+function toggleSound(){
+  soundEnabled=!soundEnabled;
+  const icon=document.getElementById('soundIcon');
+  if(soundEnabled){
+    icon.textContent='volume_up';
+    ambientAudio.volume=0.1;
+    ambientAudio.play().catch(()=>{});
+    playClick();
+  }else{
+    icon.textContent='volume_off';
+    ambientAudio.pause();
+  }
+}
+
+// Auto-start sound on first interaction
+let firstInteraction=true;
+document.addEventListener('click',()=>{
+  if(firstInteraction){
+    firstInteraction=false;
+    if(!soundEnabled){toggleSound();}
+  }
+},{once:true});
+
+// ============================
+// NAVIGATION
+// ============================
+function navigateTo(page){
+  document.querySelectorAll('.page-section').forEach(s=>s.classList.remove('active'));
+  const el=document.getElementById('page-'+page);
+  if(el)el.classList.add('active');
+  // Update nav active state
+  document.querySelectorAll('.nav-link').forEach(l=>{
+    l.classList.remove('text-primary','font-bold');
+    l.classList.add('text-on-surface-variant');
+    if(l.getAttribute('data-page')===page){l.classList.add('text-primary','font-bold');l.classList.remove('text-on-surface-variant');}
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleMobileMenu(){
+  const m=document.getElementById('mobileMenu'),i=document.getElementById('mobileMenuIcon');
+  if(m.classList.contains('hidden')){m.classList.remove('hidden');i.textContent='close';}
+  else{m.classList.add('hidden');i.textContent='menu';}
+}
+
+// ============================
+// BUILD MENU UI
+// ============================
+function buildCategoryTabs(){
+  const container=document.getElementById('category-tabs');
+  let html=`<button class="cat-pill active-pill whitespace-nowrap px-3 py-1.5 rounded-full font-label-md text-label-md transition-all bg-primary-container text-on-primary-container shadow-md sound-btn" data-cat="all" onclick="playClick();selectCat('all')">Barchasi (${MENU_DATA.length})</button>`;
+  CAT_ORDER.forEach(cat=>{
+    const count=MENU_DATA.filter(d=>d.cat===cat).length;
+    html+=`<button class="cat-pill whitespace-nowrap px-3 py-1.5 rounded-full font-label-md text-label-md transition-all bg-surface-container-high text-on-surface hover:bg-surface-bright sound-btn" data-cat="${cat}" onclick="playClick();selectCat('${cat}')">${CAT_LABELS[cat]} (${count})</button>`;
+  });
+  container.innerHTML=html;
+}
+
+function buildDishCards(){
+  const grid=document.getElementById('dishes-grid');
+  let html='';
+  MENU_DATA.forEach((d,i)=>{
+    const priceStr=d.price?d.price.toLocaleString()+' UZS':'So\'rang';
+    const hasSale=d.salePrice;
+    const imgSrc=d.img||'';
+    const hasImg=!!imgSrc;
+    const icon=CAT_ICONS[d.cat]||'restaurant';
+    html+=`<div class="menu-item-card group flex flex-col rounded-xl bg-surface-container shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 sound-btn" data-category="${d.cat}" data-name="${d.name.toLowerCase()}" data-idx="${i}" onclick="playClick()">`;
+    if(hasImg){
+      html+=`<div class="relative h-36 sm:h-44 w-full overflow-hidden"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${imgSrc}" alt="${d.name}" loading="lazy"><div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-80"></div>`;
+      if(d.badge)html+=`<span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-[10px] shadow-md font-bold flex items-center gap-0.5"><span class="material-symbols-outlined text-[12px]">local_fire_department</span>${d.badge}</span>`;
+      html+=`</div>`;
+    }else{
+      html+=`<div class="relative h-28 sm:h-36 w-full overflow-hidden bg-gradient-to-br from-surface-container-high to-surface-container-lowest flex items-center justify-center"><span class="material-symbols-outlined text-[48px] text-primary/20">${icon}</span></div>`;
+    }
+    html+=`<div class="p-3 flex flex-col flex-1 justify-between"><div><span class="font-label-sm text-[10px] uppercase tracking-wider text-primary">${CAT_LABELS[d.cat]||d.cat}</span><h3 class="font-headline-sm text-[15px] sm:text-title-lg text-on-surface mt-0.5 leading-tight">${d.name}</h3><p class="font-body-md text-[12px] text-on-surface-variant mt-0.5 line-clamp-2">${d.desc}</p></div>`;
+    html+=`<div class="pt-2 mt-auto flex items-center justify-between">`;
+    if(hasSale){
+      html+=`<div><span class="font-body-md text-[11px] text-on-surface-variant line-through block">${d.price.toLocaleString()} UZS</span><span class="font-title-lg text-[15px] text-primary font-bold">${d.salePrice.toLocaleString()} UZS</span></div>`;
+    }else{
+      html+=`<div><span class="font-title-lg text-[15px] text-primary font-bold">${priceStr}</span></div>`;
+    }
+    const addPrice=hasSale?d.salePrice:d.price;
+    if(addPrice){
+      html+=`<button class="w-8 h-8 rounded-full bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary flex items-center justify-center shadow transition-all sound-btn" onclick="event.stopPropagation();playClick();addToOrder('${d.name.replace(/'/g,"\\'")}',${addPrice})"><span class="material-symbols-outlined text-[18px]">add</span></button>`;
+    }
+    html+=`</div></div></div>`;
+  });
+  grid.innerHTML=html;
+  document.getElementById('menu-count-label').textContent=`Jami: ${MENU_DATA.length} ta taom`;
+}
+
+let currentCat='all';
+function selectCat(cat){
+  currentCat=cat;
+  document.querySelectorAll('.cat-pill').forEach(p=>{
+    p.classList.remove('bg-primary-container','text-on-primary-container','shadow-md');
+    p.classList.add('bg-surface-container-high','text-on-surface');
+  });
+  const active=document.querySelector(`.cat-pill[data-cat="${cat}"]`);
+  if(active){active.classList.remove('bg-surface-container-high','text-on-surface');active.classList.add('bg-primary-container','text-on-primary-container','shadow-md');}
+  filterMenu();
+}
+
+function filterMenu(){
+  const query=(document.getElementById('menu-search-input').value||'').trim().toLowerCase();
+  const cards=document.querySelectorAll('.menu-item-card');
+  let visible=0;
+  cards.forEach(c=>{
+    const cat=c.getAttribute('data-category');
+    const name=c.getAttribute('data-name');
+    const matchCat=(currentCat==='all'||cat===currentCat);
+    const matchSearch=(!query||name.includes(query));
+    if(matchCat&&matchSearch){c.classList.remove('hidden');c.classList.add('flex');visible++;}
+    else{c.classList.remove('flex');c.classList.add('hidden');}
+  });
+  const noAlert=document.getElementById('no-dishes-alert');
+  if(visible===0){noAlert.classList.remove('hidden');noAlert.classList.add('flex');}
+  else{noAlert.classList.add('hidden');noAlert.classList.remove('flex');}
+}
+
+// ============================
+// ORDER / CART
+// ============================
+let orderCount=0,totalSum=0;
+function addToOrder(name,price){
+  orderCount++;totalSum+=price;
+  document.getElementById('cart-counter').textContent=orderCount;
+  document.getElementById('cart-last-item').textContent=name;
+  document.getElementById('cart-total-price').textContent=totalSum.toLocaleString()+' UZS';
+  const pill=document.getElementById('quick-order-pill');
+  pill.classList.remove('hidden');pill.classList.add('flex');
+  showToast(`"${name}" buyurtmaga qo'shildi`);
+}
+
+// ============================
+// MAP MODAL
+// ============================
+function openMapModal(){document.getElementById('map-modal').classList.remove('hidden');document.getElementById('map-modal').classList.add('flex');}
+function closeMapModal(){document.getElementById('map-modal').classList.remove('flex');document.getElementById('map-modal').classList.add('hidden');}
+document.getElementById('map-modal').addEventListener('click',e=>{if(e.target===document.getElementById('map-modal'))closeMapModal();});
+window.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMapModal();closeAdminModal();}});
+
+// ============================
+// TOAST
+// ============================
+function showToast(msg){
+  const t=document.getElementById('toast');
+  document.getElementById('toast-msg').textContent=msg;
+  t.classList.remove('translate-y-20','opacity-0');t.classList.add('translate-y-0','opacity-100');
+  setTimeout(()=>{t.classList.add('translate-y-20','opacity-0');t.classList.remove('translate-y-0','opacity-100');},2500);
+}
+
+// ============================
+// ADMIN PANEL
+// ============================
+function buildAdminTable(){
+  const tbody=document.getElementById('admin-table-body');
+  const catSelect=document.getElementById('admin-cat-filter');
+  const catOptions=document.getElementById('admin-dish-cat');
+  // Populate cat selects
+  let catHtml='<option value="ALL">Barcha kategoriyalar</option>';
+  let catOptHtml='';
+  CAT_ORDER.forEach(c=>{
+    catHtml+=`<option value="${c}">${CAT_LABELS[c]}</option>`;
+    catOptHtml+=`<option value="${c}">${CAT_LABELS[c]}</option>`;
+  });
+  catSelect.innerHTML=catHtml;
+  catOptions.innerHTML=catOptHtml;
+  // Build rows
+  let html='';
+  MENU_DATA.forEach((d,i)=>{
+    const priceStr=d.price?d.price.toLocaleString()+' UZS':'—';
+    html+=`<tr class="admin-row group hover:bg-surface-container-high/60 transition-colors border-b border-surface-container-high/40" data-cat="${d.cat}" data-name="${d.name.toLowerCase()}">
+      <td class="py-2 px-4 font-label-sm text-label-sm text-on-surface-variant">${i+1}</td>
+      <td class="py-2 px-4"><span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">${d.name}</span></td>
+      <td class="py-2 px-4"><span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm">${CAT_LABELS[d.cat]||d.cat}</span></td>
+      <td class="py-2 px-4 font-label-lg text-label-lg text-on-surface">${d.salePrice?'<span class="line-through text-on-surface-variant text-[11px] block">'+d.price.toLocaleString()+'</span><span class="text-primary font-bold">'+d.salePrice.toLocaleString()+' UZS</span>':priceStr}</td>
+      <td class="py-2 px-4"><span class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm">Faol</span></td>
+      <td class="py-2 px-4 text-right"><div class="flex items-center justify-end gap-1">
+        <button class="p-1 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-highest transition-colors sound-btn" onclick="playClick();editAdminDish(${i})" title="Tahrirlash"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+        <button class="p-1 rounded-lg text-on-surface-variant hover:text-error hover:bg-surface-container-highest transition-colors sound-btn" onclick="playClick();deleteAdminDish(${i})" title="O'chirish"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+      </div></td>
+    </tr>`;
+  });
+  tbody.innerHTML=html;
+  document.getElementById('admin-total-count').textContent=MENU_DATA.length;
+  document.getElementById('admin-table-footer').textContent=`Ko'rsatilmoqda: ${MENU_DATA.length} ta taom`;
+}
+
+function filterAdminTable(){
+  const q=(document.getElementById('admin-search').value||'').toLowerCase();
+  const cat=document.getElementById('admin-cat-filter').value;
+  let visible=0;
+  document.querySelectorAll('.admin-row').forEach(r=>{
+    const name=r.getAttribute('data-name');
+    const rCat=r.getAttribute('data-cat');
+    const show=(cat==='ALL'||rCat===cat)&&(!q||name.includes(q));
+    r.style.display=show?'':'none';
+    if(show)visible++;
+  });
+  document.getElementById('admin-table-footer').textContent=`Ko'rsatilmoqda: ${visible} ta taom`;
+}
+
+function openAdminModal(title){
+  document.getElementById('admin-modal-title').textContent=title||'Yangi taom qo\'shish';
+  document.getElementById('admin-modal').classList.remove('hidden');
+}
+function closeAdminModal(){document.getElementById('admin-modal').classList.add('hidden');document.getElementById('admin-form').reset();}
+
+function handleAdminSubmit(e){
+  e.preventDefault();
+  const name=document.getElementById('admin-dish-name').value;
+  closeAdminModal();
+  showToast(`"${name}" menyuga saqlandi!`);
+}
+function editAdminDish(i){
+  const d=MENU_DATA[i];
+  document.getElementById('admin-dish-name').value=d.name;
+  document.getElementById('admin-dish-cat').value=d.cat;
+  document.getElementById('admin-dish-price').value=d.price||'';
+  document.getElementById('admin-dish-desc').value=d.desc||'';
+  openAdminModal('Tahrirlash: '+d.name);
+}
+function deleteAdminDish(i){
+  if(confirm(`"${MENU_DATA[i].name}" ni o'chirmoqchimisiz?`)){
+    showToast(`"${MENU_DATA[i].name}" o'chirildi`);
+  }
+}
+
+// ============================
+// PROMO TIMER
+// ============================
+let promoSec=4*3600+45*60+18;
+setInterval(()=>{
+  if(promoSec>0){promoSec--;
+    const h=Math.floor(promoSec/3600),m=Math.floor((promoSec%3600)/60),s=promoSec%60;
+    const el=document.getElementById('promo-timer');
+    if(el)el.textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  }
+},1000);
+
+// ============================
+// INIT
+// ============================
+document.addEventListener('DOMContentLoaded',()=>{
+  buildCategoryTabs();
+  buildDishCards();
+  buildAdminTable();
+  navigateTo('menu');
+});
+</script>
+</body></html>
